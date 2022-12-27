@@ -1,53 +1,43 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass")(require("sass"));
-var sourcemaps = require("gulp-sourcemaps");
-var autoprefixer = require("gulp-autoprefixer");
-var csso = require("gulp-csso");
-var concat = require("gulp-concat");
-var minify = require("gulp-minify");
-var cleanCss = require("gulp-clean-css");
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const sourcemaps = require("gulp-sourcemaps");
+const concat = require("gulp-concat");
+const minify = require("gulp-minify");
+const cleanCss = require("gulp-clean-css");
 
 // Development Tasks
 gulp.task("sass", function () {
   return gulp
-    .src("app/scss/**/*.scss") // Gets all files ending with .scss in app/scss and children dirs
+    .src("src/scss/**/*.scss") // Gets all files ending with .scss in src/scss and children dirs
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError)) // Passes it through a gulp-sass, log errors to console
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("app/css")); // Outputs it in the css folder
+    .pipe(gulp.dest("src/css")); // Outputs it in the css folder
 });
 
 // Watchers
 gulp.task("watch", function () {
-  gulp.watch("app/scss/**/*.scss", gulp.series("sass"));
+  gulp.watch("src/scss/**/*.scss", gulp.series("sass"));
 });
 
 // Gulp task to minify CSS files
 gulp.task("minifycss", function () {
   return (
     gulp
-      .src(["app/css/style.css"])
+      .src(["src/css/style.css"])
       // Compile SASS files
       .pipe(
         sass({
-          outputStyle: "nested",
           precision: 10,
           includePaths: ["."],
           onError: console.error.bind(console, "Sass error:"),
         })
       )
       .pipe(concat("bundle.min.css"))
-      // Auto-prefix css styles for cross browser compatibility
-      .pipe(autoprefixer())
-      // Minify the file
+
       .pipe(cleanCss())
       // Output
-      .pipe(gulp.dest("app/css"))
+      .pipe(gulp.dest("src/css"))
   );
 });
 
@@ -55,7 +45,7 @@ gulp.task("minifycss", function () {
 gulp.task("minifyjs", function () {
   return (
     gulp
-      .src(["app/js/browser-class.js", "app/js/global.js"])
+      .src(["src/js/index.js"])
       // Minify the file
       .pipe(concat("bundle.min.js"))
       .pipe(
@@ -67,6 +57,6 @@ gulp.task("minifyjs", function () {
         })
       )
       // Output
-      .pipe(gulp.dest("app/js"))
+      .pipe(gulp.dest("src/js"))
   );
 });

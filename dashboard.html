@@ -1,925 +1,1048 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="src/images/icon/deloitte.ico"
+      type="image/x-icon"
+    />
+    <title>Delta | Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="app/images/icon/deloitte.ico" type="image/x-icon" />
-  <title>Dashboard</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="app/css/style.css" />
-</head>
-
-<body>
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <img src="app/images/icon/deloitte.ico" alt="logo" />
-      <h1 class="sidebar-logo__name">
-        Deloitte
-       <!-- <a href=""></a>  -->
-        <span class="circle"></span>
-      </h1>
-      <i class="bx bx-chevron-left" id="btn"> </i>
-    </div>
-
-    <ul class="sidebar-list">
-      <li data-page="dashboard">
-        <a href="javascript:void(0)">
-          <i class="bx bx-tachometer"></i>
-          <span class="sidebar-list__name">Dashboard</span>
-        </a>
-        <span class="tooltip">Dashboard</span>
-      </li>
-
-      <li data-page="user-management">
-        <a href="javascript:void(0)">
-          <i class="bx bx-user"></i>
-          <span class="sidebar-list__name">User Management</span>
-        </a>
-        <span class="tooltip">User Management</span>
-      </li>
-
-      <li data-page="asset-management">
-        <a href="javascript:void(0)">
-          <i class="bx bxs-wallet"></i>
-          <span class="sidebar-list__name">Asset Management</span>
-        </a>
-        <span class="tooltip">Asset Management</span>
-      </li>
-
-      <li data-page="container-management">
-        <a href="javascript:void(0)">
-          <i class="bx bx-network-chart"></i>
-          <span class="sidebar-list__name">Container Management</span>
-        </a>
-        <span class="tooltip">Container Management</span>
-      </li>
-
-      <li data-page="assessment-master">
-        <a href="javascript:void(0)">
-          <i class="bx bx-folder"></i>
-          <span class="sidebar-list__name">Assessment Master</span>
-        </a>
-        <span class="tooltip">Assessment Master</span>
-      </li>
-
-      <li data-page="project-status">
-        <a href="javascript:void(0)">
-          <i class="bx bx-pie-chart-alt-2"></i>
-          <span class="sidebar-list__name">Project Status Report</span>
-        </a>
-        <span class="tooltip">Project Status Report</span>
-      </li>
-
-      <li class="settings" id="settings">
-        <a href="javascript:void(0)">My Profile</a>
-        <a href="javascript:void(0)">Settings</a>
-        <a href="index.html">Logout</a>
-        <span id="triangle-down"></span>
-      </li>
-
-      <li class="profile" data-page="dashboard">
-        <div class="profile-details">
-          <img src="app/images/profile-img.png" alt="profileImg" />
-          <div class="name_job">
-            <h2 class="name">Kinjal Jain</h2>
-            <div class="job">Administrator</div>
-          </div>
-        </div>
-        <i class="bx bx-chevron-up" id="logout"></i>
-      </li>
-    </ul>
-  </aside>
-
-  <main id="main">
-    <!-- Dashboard -->
-    <section class="dashboard" id="dashboard">
-      <header class="dashboard__header">
-        <div class="dashboard-left">
-          <h2 class="dashboard-left__name">Hello Kinjal</h2>
-          <p class="dashboard-left__message">Have a great day ahead.</p>
-        </div>
-
-        <div class="dashboard-right">
-          <div class="dropdown">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Workspace
-              <i class="bx bx-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
-
-          <div class="dashboard-darkmode">
-            <span class="black-area"></span>
-            <span class="white-area"></span>
-          </div>
-
-          <span class="dashboard-darkmode__text">Dark</span>
-
-          <a href="#" data-page="add-assessment" class="dashboard-right__add-assessment">
-            ADD NEW ASSESSMENT
-          </a>
-        </div>
-      </header>
-
-      <div class="dashboard-main">
-        <h2 class="dashboard-main__title">Discover the data</h2>
-        <div class="dashboard-items">
-          <a href="javascript:void(0)" class="dashboard-card">
-            <h3 class="dashboard-card__message">COMPLIANCE</h3>
-            <img src="app/images/card.png" alt="" class="dashboard-card__image" />
-            <h2 class="dashboard-card__header">CISO & Business Unit View</h2>
-            <p class="dashboard-card__sub-header">
-              Dashboard with 360 degree view to the CISO
-            </p>
-          </a>
-
-          <a href="javascript:void(0)" class="dashboard-card">
-            <h3 class="dashboard-card__message">RISK</h3>
-            <img src="app/images/card.png" alt="" class="dashboard-card__image" />
-            <h2 class="dashboard-card__header">Retail Sales Audit</h2>
-            <p class="dashboard-card__sub-header">
-              Assessment & reconcilation of the retail sales against risk
-              controls
-            </p>
-          </a>
-
-          <a href="javascript:void(0)" class="dashboard-card">
-            <h3 class="dashboard-card__message">TOPIC</h3>
-            <img src="app/images/card.png" alt="" class="dashboard-card__image" />
-            <h2 class="dashboard-card__header">Assessment Master</h2>
-            <p class="dashboard-card__sub-header">
-              Resords of all the assessments in available
-            </p>
-          </a>
-        </div>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="src/images/icon/deloitte.ico" alt="logo" />
+        <h1 class="sidebar-logo__name">
+          Delta
+          <!-- <a href=""></a>  -->
+          <span class="circle"></span>
+        </h1>
+        <i class="bx bx-chevron-left" id="btn"> </i>
       </div>
 
-      <i class="bx bxs-plus-square"></i>
-    </section>
-    <!-- Add New Assessment Form  -->
-    <section class="add-assessment">
-      <header class="add-assessment__header">
-        <h2 class="add-assessment__title">Add New Assessment</h2>
-        <i class="bx bx-x" id="closeAddAssessment"></i>
-      </header>
+      <ul class="sidebar-list">
+        <li data-page="dashboard">
+          <a href="javascript:void(0)">
+            <i class="bx bx-tachometer"></i>
+            <span class="sidebar-list__name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
 
-      <form class="add-assessment-form">
-        <div class="add-assessment__item">
-          <label class="add-assessment-form__title" for="assessmentName"> Assessment Name </label>
-          <input class="add-assessment-form__text" id="assessmentName" type="text" name="text" placeholder="Enter Assessment Name" />
-        </div>
+        <li data-page="user-management">
+          <a href="javascript:void(0)">
+            <i class="bx bx-user"></i>
+            <span class="sidebar-list__name">User Management</span>
+          </a>
+          <span class="tooltip">User Management</span>
+        </li>
 
-        <div class="add-assessment__item ">
-          <label class="add-assessment-form__title"> Description</label>
-          <input class="add-assessment-form__text add-assessment-form__text--height" type="text" name="text"
-            placeholder="Enter Assessment Description" />
-        </div>
+        <li data-page="asset-management">
+          <a href="javascript:void(0)">
+            <i class="bx bxs-wallet"></i>
+            <span class="sidebar-list__name">Asset Management</span>
+          </a>
+          <span class="tooltip">Asset Management</span>
+        </li>
 
-        <div class="add-assessment__item">
-          <label class="add-assessment-form__title">
-            Client Assessment Domain Name
-          </label>
+        <li data-page="container-management">
+          <a href="javascript:void(0)">
+            <i class="bx bx-network-chart"></i>
+            <span class="sidebar-list__name">Container Management</span>
+          </a>
+          <span class="tooltip">Container Management</span>
+        </li>
 
-          <div class="add-assessment-form__dropdown">
-            <input type="text" class="textBox" placeholder="Select Assessment Name" readonly />
+        <li data-page="assessment-master">
+          <a href="javascript:void(0)">
+            <i class="bx bx-folder"></i>
+            <span class="sidebar-list__name">Assessment Master</span>
+          </a>
+          <span class="tooltip">Assessment Master</span>
+        </li>
 
-            <div class="option">
-              <div onclick="show('www.abc@abc.com')">www.abc@abc.com</div>
-              <div onclick="show('www.xyz@xyz.com')">www.xyz@xyz.com</div>
-              <div onclick="show('www.pqr@pqr.com')">www.pqr@pqr.com</div>
-              <div onclick="show('www.mno@mno.com')">www.mno@mno.com</div>
+        <li data-page="project-status">
+          <a href="javascript:void(0)">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="sidebar-list__name">Project Status Report</span>
+          </a>
+          <span class="tooltip">Project Status Report</span>
+        </li>
+
+        <li class="settings" id="settings">
+          <a href="javascript:void(0)">My Profile</a>
+          <a href="javascript:void(0)">Settings</a>
+          <a href="index.html">Logout</a>
+          <span id="triangle-down"></span>
+        </li>
+
+        <li class="profile" data-page="dashboard">
+          <div class="profile-details">
+            <img src="src/images/profile-img.png" alt="profileImg" />
+            <div class="name_job">
+              <h2 class="name">Kinjal Jain</h2>
+              <div class="job">Administrator</div>
             </div>
           </div>
-        </div>
-
-        <div class="add-assessment-form__module">
-          <div class="add-assessment__item">
-            <label class="add-assessment-form__title"> Module </label>
-            <input class="add-assessment-form__text" type="text" name="text" placeholder="Enter Module Name" />
-          </div>
-
-          <div class="add-assessment__item">
-            <label class="add-assessment-form__title">
-              Assessment Domain
-            </label>
-            <select class="add-assessment-form__text">
-              <option disabled selected>Select Module Name</option>
-              <option value="xyz">xyz</option>
-              <option value="abc">abc</option>
-            </select>
-          </div>
-
-          <div class="add-assessment__item">
-            <label class="add-assessment-form__title">
-              Assessment Role
-            </label>
-            <input class="add-assessment-form__text" type="text" name="text" placeholder="Select Assesment Role" />
-          </div>
-
-          <div class="add-assessment__item">
-            <label class="add-assessment-form__title">
-              Report Template
-            </label>
-            <select class="add-assessment-form__text">
-              <option disabled selected>Select Report Template</option>
-              <option value="xyz">xyz</option>
-              <option value="abc">abc</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="add-assessment-form__botton-area">
-          <input class="add-assessment-form__button" type="submit" value="Save Assessment" />
-        </div>
-      </form>
-    </section>
-    <!-- User Management -->
-    <section class="user-management" id="user-management">
-      <h2 class="dashboard-text">User Management</h2>
-    </section>
-    <!-- Asset Management -->
-    <section class="asset-management" id="asset-management">
-      <h2 class="dashboard-text">Asset Management</h2>
-    </section>
-    <!-- Container Management -->
-    <section class="container-management dashboard" id="container-management">
-      <header class="dashboard__header">
-        <div class="dashboard-left">
-          <h2 class="dashboard-left__name">Container Management</h2>
-          <p class="dashboard-left__message">Checkout the Structure</p>
-        </div>
-
-        <div class="dashboard-right">
-          <div class="dropdown">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Workspace
-              <i class="bx bx-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
-
-          <div class="dashboard-darkmode">
-            <span class="black-area"></span>
-            <span class="white-area"></span>
-          </div>
-
-          <span class="dashboard-darkmode__text">Dark</span>
-
-          <a href="#" data-page="add-assessment" class="dashboard-right__add-assessment">
-            ADD NEW ASSESSMENT
-          </a>
-        </div>
-      </header>
-
-      <div class="container-management-main dashboard-main">
-        <div class="container-management-applicant">
-          <span class="plus-icon">
-            <i class="bx bx-plus"></i>
-          </span>
-
-          <a href="#" class="container-management-applicant__name">
-            Application name
-          </a>
-
-          <a href="#" class="container-management-applicant__desc">
-            Applications desc
-          </a>
-
-          <span class="plus-icon">
-            <i class="bx bx-plus"></i>
-
-            <span class="curly-left-border">
-              <span></span>
-            </span>
-            <span class="curly-bottom-border"></span>
-            <span class="curly-right-border">
-              <span></span>
-            </span>
-          </span>
-        </div>
-
-        <div class="container-management-sub-applicant">
-          <div class="container-management-sub-applicant-info">
-            <a href="#" class="container-management-sub-applicant__name">
-              On Prem Application
-            </a>
-
-            <a href="#" class="container-management-sub-applicant__desc">
-              On Prem application desc
-            </a>
-
-            <span class="plus-icon">
-              <i class="bx bx-plus"></i>
-            </span>
-          </div>
-
-          <div class="container-management-sub-applicant-info">
-            <a href="#" class="container-management-sub-applicant__name">
-              Sub Application name
-            </a>
-
-            <a href="#" class="container-management-sub-applicant__desc">
-              description will be here
-            </a>
-
-            <span class="plus-icon">
-              <i class="bx bx-plus"></i>
-              <span class="curly-bottom-border curly-bottom-border--height">
-                <span class="curly-bottom-border__left"> <span></span> </span><span class="curly-bottom-border__right">
-                  <span></span>
-                </span>
-              </span>
-            </span>
-          </div>
-
-          <div class="container-management-sub-applicant-info">
-            <a href="#" class="container-management-sub-applicant__name">
-              Sub Application name
-            </a>
-
-            <a href="#" class="container-management-sub-applicant__desc">
-              description will be here
-            </a>
-
-            <span class="plus-icon">
-              <i class="bx bx-plus"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="container-management-sub-internal">
-          <div class="container-management-sub-internal__info">
-            <a href="#" class="container-management-sub-internal__title">
-              Sub internal
-            </a>
-
-            <a href="#" class="container-management-sub-internal__name">
-              Application name
-            </a>
-
-            <a href="#" class="container-management-sub-internal__desc">
-              description will be here
-            </a>
-
-            <span class="plus-icon">
-              <i class="bx bx-plus"></i>
-            </span>
-          </div>
-
-          <div class="container-management-sub-internal__info">
-            <a href="#" class="container-management-sub-internal__title">
-              Sub internal
-            </a>
-
-            <a href="#" class="container-management-sub-internal__name">
-              Application name
-            </a>
-
-            <a href="#" class="container-management-sub-internal__desc">
-              description will be here
-            </a>
-
-            <span class="plus-icon">
-              <i class="bx bx-plus"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Assessment Master -->
-    <section class="assessment dashboard" id="assessment-master">
-      <header class="dashboard__header">
-        <div class="dashboard-left">
-          <h2 class="dashboard-left__name">Assessment Master</h2>
-          <p class="dashboard-left__message">2 Assessment Domains in list</p>
-        </div>
-
-        <div class="dashboard-right">
-          <div class="dropdown">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Workspace
-              <i class="bx bx-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
-
-          <div class="dashboard-darkmode">
-            <span class="black-area"></span>
-            <span class="white-area"></span>
-          </div>
-
-          <span class="dashboard-darkmode__text">Dark</span>
-
-          <a href="#" class="dashboard-right__add-assessment">ADD NEW ASSESSMENT</a>
-        </div>
-      </header>
-
-      <div class="assessment-main dashboard-main">
-        <header class="assessment-main__header">
-          <nav class="assessment-main__nav">
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Name
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item"> </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Client
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Is Compliance & Rating Required
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Module
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Assessment Domain
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Status
-            </a>
-
-            <a href="javascript:void(0)" class="assessment-main__item">
-              Action
-            </a>
-          </nav>
-        </header>
-
-        <details class="assessment-main__details assessment-main__details--first">
-          <summary class="assessment-main-summary">
-            <span class="assessment-main-summary__header">
-              Assessment Domain - VAPT
-            </span>
-            <h2 class="assessment-main-summary__sub-header">
-              1 Sub Assessment
-            </h2>
-          </summary>
-
-          <ul class="assessment-main__info">
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">VAPT</h3>
-              <p class="assessment-main-list__paragraph">
-                Term used to describe security testing that is designed to
-                identify and help address cyber security vulnerabilities.
-              </p>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">XYZ company</h3>
-              <p class="assessment-main-list__paragraph">
-                Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's.
-              </p>
-            </li>
-
-            <li class="assessment-main-list">
-              <div class="form-check form-switch px-0">
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" />
-                </div>
-              </div>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list assessment-main-list--status">
-              ACTIVE
-            </li>
-
-            <li class="assessment-main-list">
-              <i class="bx bx-dots-vertical-rounded"></i>
-            </li>
-          </ul>
-        </details>
-
-        <details class="assessment-main__details assessment-main__details--second">
-          <summary class="assessment-main-summary">
-            <span class="assessment-main-summary__header">
-              Assessment Domain - Operational Control
-            </span>
-            <h2 class="assessment-main-summary__sub-header">
-              2 Sub Assessments
-            </h2>
-          </summary>
-
-          <ul class="assessment-main__info">
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">VAPT</h3>
-              <p class="assessment-main-list__paragraph">
-                Term used to describe security testing that is designed to
-                identify and help address cyber security vulnerabilities.
-              </p>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">XYZ company</h3>
-              <p class="assessment-main-list__paragraph">
-                Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's.
-              </p>
-            </li>
-
-            <li class="assessment-main-list">
-              <div class="form-check form-switch px-0">
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" />
-                </div>
-              </div>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list assessment-main-list--status">
-              ACTIVE
-            </li>
-
-            <li class="assessment-main-list">
-              <i class="bx bx-dots-vertical-rounded"></i>
-            </li>
-          </ul>
-
-          <ul class="assessment-main__info">
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">VAPT</h3>
-              <p class="assessment-main-list__paragraph">
-                Term used to describe security testing that is designed to
-                identify and help address cyber security vulnerabilities.
-              </p>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list">
-              <h3 class="assessment-main-list__header">XYZ company</h3>
-              <p class="assessment-main-list__paragraph">
-                Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's.
-              </p>
-            </li>
-
-            <li class="assessment-main-list">
-              <div class="form-check form-switch px-0">
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" checked />
-                </div>
-              </div>
-            </li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list"></li>
-
-            <li class="assessment-main-list assessment-main-list--status">
-              ACTIVE
-            </li>
-
-            <li class="assessment-main-list">
-              <i class="bx bx-dots-vertical-rounded"></i>
-            </li>
-          </ul>
-        </details>
-      </div>
-    </section>
-    <!-- Project Status Report -->
-    <section class="project-status dashboard" id="project-status">
-      <header class="project-status__header dashboard__header">
-        <div class="dashboard-left">
-          <h2 class="dashboard-left__name">
-            ITC Assest A - Runtime Status Update
-          </h2>
-          <p class="dashboard-left__message">
-            Checkout the status of the project
-          </p>
-        </div>
-
-        <div class="dashboard-right">
-          <div class="dropdown">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Workspace
-              <i class="bx bx-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
-
-          <div class="dashboard-darkmode">
-            <span class="black-area"></span>
-            <span class="white-area"></span>
-          </div>
-
-          <span class="dashboard-darkmode__text">Dark</span>
-
-          <a href="#" data-page="add-assessment" class="dashboard-right__add-assessment">
-            ADD NEW ASSESSMENT
-          </a>
-        </div>
-      </header>
-
-      <div class="project-status-main dashboard-main">
-        <div class="project-status-main__items">
-          <div class="project-status-main__card">
-            <h2 class="project-status-main__title">Pre Assessment</h2>
-            <p class="project-status-main__progress">40% Progress</p>
-
-            <progress max="100" value="40" class="project-status-main__progress-status">
-              <span class="progress-bar"></span>
-            </progress>
-          </div>
-
-          <div class="project-status-main-progress-info">
-            <div>
-              <span class="project-status-main-progress-info__logo">
-                <i class="bx bx-check"></i>
-              </span>
-
-              <h3 class="project-status-main-progress-info__review">
-                Assessment Review
-              </h3>
-
-              <p class="project-status-main-progress-info__reviewer">
-                Reviewer :
-                <span> ITC Admin </span>
-              </p>
-
-              <p class="project-status-main-progress-info__date">
-                Completed On :
-                <span> 17 Nov 2021 11:23am</span>
-              </p>
-            </div>
-
-            <div>
-              <span class="project-status-main-progress-info__logo">
-                <i class="bx bx-check"></i>
-              </span>
-
-              <h3 class="project-status-main-progress-info__review">
-                Response
-              </h3>
-
-              <p class="project-status-main-progress-info__reviewer">
-                Performed by :
-                <span> Safety User</span>
-              </p>
-
-              <p class="project-status-main-progress-info__date">
-                Completed On :
-                <span> 13 Nov 2021 1:56pm</span>
-              </p>
-            </div>
-          </div>
-
-          <div></div>
-        </div>
-
-        <div class="project-status-main__items">
-          <div class="project-status-main__card">
-            <h2 class="project-status-main__title">COVID - 19</h2>
-            <p class="project-status-main__progress">80% Progress</p>
-
-            <progress class="project-status-main__progress-status" value="80" max="100">
-              80%
-            </progress>
-          </div>
-
-          <div class="project-status-main__card">
-            <h2 class="project-status-main__title">Operational Control</h2>
-          </div>
-
-          <div class="project-status-main__card">
-            <h2 class="project-status-main__title">Safety Planning</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Bell icon notification  -->
-  <aside class="notification" id="notification">
-    <div class="notification__header">
-      <div class="notification__left">
-        <h2 class="notification__date">16 November, 2021</h2>
-        <h3 class="notification__time">Tue , 7:12 pm</h3>
-      </div>
-      <div class="notification__right">
-        <i class="bx bx-bell notification__bell" id="notificationBell"></i>
-      </div>
-    </div>
-
-    <div class="notification-mailbox dropdown">
-      <button class="notification-mailbox__button dropdown-toggle" type="button" id="dropdownMenuButton1"
-        data-bs-toggle="dropdown" aria-expanded="false">
-        <h2 class="notification-mailbox__header">
-          My Mailbox
-          <p class="notification-mailbox__sub-header">Recent Mails</p>
-        </h2>
-      </button>
-      <i class="bx bx-search notification-mailbox__search"></i>
-
-      <ul class="notification-mailbox__menu dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li>
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">3 min</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">PP</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">Hi</h2>
-              <p class="notification-mailbox__message">PFA</p>
-            </div>
-            <div class="notification-mailbox__time">12:23pm</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">Interview assigned</h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">10:11am</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">1d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">3d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">3d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">4d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">4d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">5d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">5d</div>
-          </a>
-
-          <a class="notification-mailbox__item" href="#">
-            <div class="notification-mailbox__profile">SK</div>
-            <div class="notification-mailbox__mail">
-              <h2 class="notification-mailbox__title">
-                Meeting Confirmation
-              </h2>
-              <p class="notification-mailbox__message">
-                Hello Kinjal , Im available for the meet..
-              </p>
-            </div>
-            <div class="notification-mailbox__time">6d</div>
-          </a>
+          <i class="bx bx-chevron-up" id="logout"></i>
         </li>
       </ul>
-    </div>
-  </aside>
-</body>
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<!-- Javascript  -->
-<script src="app/js/dashboard.js" defer></script>
+    </aside>
 
+    <main id="main">
+      <!-- Dashboard -->
+      <section class="dashboard" id="dashboard">
+        <header class="dashboard__header">
+          <div class="dashboard-left">
+            <h2 class="dashboard-left__name">Hello Kinjal</h2>
+            <p class="dashboard-left__message">Have a great day ahead.</p>
+          </div>
+
+          <div class="dashboard-right">
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Workspace
+                <i class="bx bx-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="dashboard-darkmode">
+              <span class="black-area"></span>
+              <span class="white-area"></span>
+            </div>
+
+            <span class="dashboard-darkmode__text">Dark</span>
+
+            <a
+              href="#"
+              data-page="add-assessment"
+              class="dashboard-right__add-assessment"
+            >
+              ADD NEW ASSESSMENT
+            </a>
+          </div>
+        </header>
+
+        <div class="dashboard-main">
+          <h2 class="dashboard-main__title">Discover the data</h2>
+          <div class="dashboard-items">
+            <a href="javascript:void(0)" class="dashboard-card">
+              <h3 class="dashboard-card__message">COMPLIANCE</h3>
+              <img
+                src="src/images/card.png"
+                alt=""
+                class="dashboard-card__image"
+              />
+              <h2 class="dashboard-card__header">CISO & Business Unit View</h2>
+              <p class="dashboard-card__sub-header">
+                Dashboard with 360 degree view to the CISO
+              </p>
+            </a>
+
+            <a href="javascript:void(0)" class="dashboard-card">
+              <h3 class="dashboard-card__message">RISK</h3>
+              <img
+                src="src/images/card.png"
+                alt=""
+                class="dashboard-card__image"
+              />
+              <h2 class="dashboard-card__header">Retail Sales Audit</h2>
+              <p class="dashboard-card__sub-header">
+                Assessment & reconcilation of the retail sales against risk
+                controls
+              </p>
+            </a>
+
+            <a href="javascript:void(0)" class="dashboard-card">
+              <h3 class="dashboard-card__message">TOPIC</h3>
+              <img
+                src="src/images/card.png"
+                alt=""
+                class="dashboard-card__image"
+              />
+              <h2 class="dashboard-card__header">Assessment Master</h2>
+              <p class="dashboard-card__sub-header">
+                Resords of all the assessments in available
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <i class="bx bxs-plus-square"></i>
+      </section>
+      <!-- Add New Assessment Form  -->
+      <section class="add-assessment">
+        <header class="add-assessment__header">
+          <h2 class="add-assessment__title">Add New Assessment</h2>
+          <i class="bx bx-x" id="closeAddAssessment"></i>
+        </header>
+
+        <form class="add-assessment-form">
+          <div class="add-assessment__item">
+            <label class="add-assessment-form__title" for="assessmentName">
+              Assessment Name
+            </label>
+            <input
+              class="add-assessment-form__text"
+              id="assessmentName"
+              type="text"
+              name="text"
+              placeholder="Enter Assessment Name"
+            />
+          </div>
+
+          <div class="add-assessment__item">
+            <label class="add-assessment-form__title"> Description</label>
+            <input
+              class="add-assessment-form__text add-assessment-form__text--height"
+              type="text"
+              name="text"
+              placeholder="Enter Assessment Description"
+            />
+          </div>
+
+          <div class="add-assessment__item">
+            <label class="add-assessment-form__title">
+              Client Assessment Domain Name
+            </label>
+
+            <div class="add-assessment-form__dropdown">
+              <input
+                type="text"
+                class="textBox"
+                placeholder="Select Assessment Name"
+                readonly
+              />
+
+              <div class="option">
+                <div onclick="show('www.abc@abc.com')">www.abc@abc.com</div>
+                <div onclick="show('www.xyz@xyz.com')">www.xyz@xyz.com</div>
+                <div onclick="show('www.pqr@pqr.com')">www.pqr@pqr.com</div>
+                <div onclick="show('www.mno@mno.com')">www.mno@mno.com</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="add-assessment-form__module">
+            <div class="add-assessment__item">
+              <label class="add-assessment-form__title"> Module </label>
+              <input
+                class="add-assessment-form__text"
+                type="text"
+                name="text"
+                placeholder="Enter Module Name"
+              />
+            </div>
+
+            <div class="add-assessment__item">
+              <label class="add-assessment-form__title">
+                Assessment Domain
+              </label>
+              <select class="add-assessment-form__text">
+                <option disabled selected>Select Module Name</option>
+                <option value="xyz">xyz</option>
+                <option value="abc">abc</option>
+              </select>
+            </div>
+
+            <div class="add-assessment__item">
+              <label class="add-assessment-form__title">
+                Assessment Role
+              </label>
+              <input
+                class="add-assessment-form__text"
+                type="text"
+                name="text"
+                placeholder="Select Assesment Role"
+              />
+            </div>
+
+            <div class="add-assessment__item">
+              <label class="add-assessment-form__title">
+                Report Template
+              </label>
+              <select class="add-assessment-form__text">
+                <option disabled selected>Select Report Template</option>
+                <option value="xyz">xyz</option>
+                <option value="abc">abc</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="add-assessment-form__botton-area">
+            <input
+              class="add-assessment-form__button"
+              type="submit"
+              value="Save Assessment"
+            />
+          </div>
+        </form>
+      </section>
+      <!-- User Management -->
+      <section class="user-management" id="user-management">
+        <h2 class="dashboard-text">User Management</h2>
+      </section>
+      <!-- Asset Management -->
+      <section class="asset-management" id="asset-management">
+        <h2 class="dashboard-text">Asset Management</h2>
+      </section>
+      <!-- Container Management -->
+      <section class="container-management dashboard" id="container-management">
+        <header class="dashboard__header">
+          <div class="dashboard-left">
+            <h2 class="dashboard-left__name">Container Management</h2>
+            <p class="dashboard-left__message">Checkout the Structure</p>
+          </div>
+
+          <div class="dashboard-right">
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Workspace
+                <i class="bx bx-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="dashboard-darkmode">
+              <span class="black-area"></span>
+              <span class="white-area"></span>
+            </div>
+
+            <span class="dashboard-darkmode__text">Dark</span>
+
+            <a
+              href="#"
+              data-page="add-assessment"
+              class="dashboard-right__add-assessment"
+            >
+              ADD NEW ASSESSMENT
+            </a>
+          </div>
+        </header>
+
+        <div class="container-management-main dashboard-main">
+          <div class="container-management-applicant">
+            <span class="plus-icon">
+              <i class="bx bx-plus"></i>
+            </span>
+
+            <a href="#" class="container-management-applicant__name">
+              Application name
+            </a>
+
+            <a href="#" class="container-management-applicant__desc">
+              Applications desc
+            </a>
+
+            <span class="plus-icon">
+              <i class="bx bx-plus"></i>
+
+              <span class="curly-left-border">
+                <span></span>
+              </span>
+              <span class="curly-bottom-border"></span>
+              <span class="curly-right-border">
+                <span></span>
+              </span>
+            </span>
+          </div>
+
+          <div class="container-management-sub-applicant">
+            <div class="container-management-sub-applicant-info">
+              <a href="#" class="container-management-sub-applicant__name">
+                On Prem Application
+              </a>
+
+              <a href="#" class="container-management-sub-applicant__desc">
+                On Prem application desc
+              </a>
+
+              <span class="plus-icon">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+
+            <div class="container-management-sub-applicant-info">
+              <a href="#" class="container-management-sub-applicant__name">
+                Sub Application name
+              </a>
+
+              <a href="#" class="container-management-sub-applicant__desc">
+                description will be here
+              </a>
+
+              <span class="plus-icon">
+                <i class="bx bx-plus"></i>
+                <span class="curly-bottom-border curly-bottom-border--height">
+                  <span class="curly-bottom-border__left"> <span></span> </span
+                  ><span class="curly-bottom-border__right">
+                    <span></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+
+            <div class="container-management-sub-applicant-info">
+              <a href="#" class="container-management-sub-applicant__name">
+                Sub Application name
+              </a>
+
+              <a href="#" class="container-management-sub-applicant__desc">
+                description will be here
+              </a>
+
+              <span class="plus-icon">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="container-management-sub-internal">
+            <div class="container-management-sub-internal__info">
+              <a href="#" class="container-management-sub-internal__title">
+                Sub internal
+              </a>
+
+              <a href="#" class="container-management-sub-internal__name">
+                Application name
+              </a>
+
+              <a href="#" class="container-management-sub-internal__desc">
+                description will be here
+              </a>
+
+              <span class="plus-icon">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+
+            <div class="container-management-sub-internal__info">
+              <a href="#" class="container-management-sub-internal__title">
+                Sub internal
+              </a>
+
+              <a href="#" class="container-management-sub-internal__name">
+                Application name
+              </a>
+
+              <a href="#" class="container-management-sub-internal__desc">
+                description will be here
+              </a>
+
+              <span class="plus-icon">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Assessment Master -->
+      <section class="assessment dashboard" id="assessment-master">
+        <header class="dashboard__header">
+          <div class="dashboard-left">
+            <h2 class="dashboard-left__name">Assessment Master</h2>
+            <p class="dashboard-left__message">2 Assessment Domains in list</p>
+          </div>
+
+          <div class="dashboard-right">
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Workspace
+                <i class="bx bx-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="dashboard-darkmode">
+              <span class="black-area"></span>
+              <span class="white-area"></span>
+            </div>
+
+            <span class="dashboard-darkmode__text">Dark</span>
+
+            <a href="#" class="dashboard-right__add-assessment"
+              >ADD NEW ASSESSMENT</a
+            >
+          </div>
+        </header>
+
+        <div class="assessment-main dashboard-main">
+          <header class="assessment-main__header">
+            <nav class="assessment-main__nav">
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Name
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item"> </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Client
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Is Compliance & Rating Required
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Module
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Assessment Domain
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Status
+              </a>
+
+              <a href="javascript:void(0)" class="assessment-main__item">
+                Action
+              </a>
+            </nav>
+          </header>
+
+          <details
+            class="assessment-main__details assessment-main__details--first"
+          >
+            <summary class="assessment-main-summary">
+              <span class="assessment-main-summary__header">
+                Assessment Domain - VAPT
+              </span>
+              <h2 class="assessment-main-summary__sub-header">
+                1 Sub Assessment
+              </h2>
+            </summary>
+
+            <ul class="assessment-main__info">
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">VAPT</h3>
+                <p class="assessment-main-list__paragraph">
+                  Term used to describe security testing that is designed to
+                  identify and help address cyber security vulnerabilities.
+                </p>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">XYZ company</h3>
+                <p class="assessment-main-list__paragraph">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's.
+                </p>
+              </li>
+
+              <li class="assessment-main-list">
+                <div class="form-check form-switch px-0">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list assessment-main-list--status">
+                ACTIVE
+              </li>
+
+              <li class="assessment-main-list">
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+            </ul>
+          </details>
+
+          <details
+            class="assessment-main__details assessment-main__details--second"
+          >
+            <summary class="assessment-main-summary">
+              <span class="assessment-main-summary__header">
+                Assessment Domain - Operational Control
+              </span>
+              <h2 class="assessment-main-summary__sub-header">
+                2 Sub Assessments
+              </h2>
+            </summary>
+
+            <ul class="assessment-main__info">
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">VAPT</h3>
+                <p class="assessment-main-list__paragraph">
+                  Term used to describe security testing that is designed to
+                  identify and help address cyber security vulnerabilities.
+                </p>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">XYZ company</h3>
+                <p class="assessment-main-list__paragraph">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's.
+                </p>
+              </li>
+
+              <li class="assessment-main-list">
+                <div class="form-check form-switch px-0">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list assessment-main-list--status">
+                ACTIVE
+              </li>
+
+              <li class="assessment-main-list">
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+            </ul>
+
+            <ul class="assessment-main__info">
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">VAPT</h3>
+                <p class="assessment-main-list__paragraph">
+                  Term used to describe security testing that is designed to
+                  identify and help address cyber security vulnerabilities.
+                </p>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list">
+                <h3 class="assessment-main-list__header">XYZ company</h3>
+                <p class="assessment-main-list__paragraph">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's.
+                </p>
+              </li>
+
+              <li class="assessment-main-list">
+                <div class="form-check form-switch px-0">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      checked
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list"></li>
+
+              <li class="assessment-main-list assessment-main-list--status">
+                ACTIVE
+              </li>
+
+              <li class="assessment-main-list">
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </section>
+      <!-- Project Status Report -->
+      <section class="project-status dashboard" id="project-status">
+        <header class="project-status__header dashboard__header">
+          <div class="dashboard-left">
+            <h2 class="dashboard-left__name">
+              ITC Assest A - Runtime Status Update
+            </h2>
+            <p class="dashboard-left__message">
+              Checkout the status of the project
+            </p>
+          </div>
+
+          <div class="dashboard-right">
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Workspace
+                <i class="bx bx-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="dashboard-darkmode">
+              <span class="black-area"></span>
+              <span class="white-area"></span>
+            </div>
+
+            <span class="dashboard-darkmode__text">Dark</span>
+
+            <a
+              href="#"
+              data-page="add-assessment"
+              class="dashboard-right__add-assessment"
+            >
+              ADD NEW ASSESSMENT
+            </a>
+          </div>
+        </header>
+
+        <div class="project-status-main dashboard-main">
+          <div class="project-status-main__items">
+            <div class="project-status-main__card">
+              <h2 class="project-status-main__title">Pre Assessment</h2>
+              <p class="project-status-main__progress">40% Progress</p>
+
+              <progress
+                max="100"
+                value="40"
+                class="project-status-main__progress-status"
+              >
+                <span class="progress-bar"></span>
+              </progress>
+            </div>
+
+            <div class="project-status-main-progress-info">
+              <div>
+                <span class="project-status-main-progress-info__logo">
+                  <i class="bx bx-check"></i>
+                </span>
+
+                <h3 class="project-status-main-progress-info__review">
+                  Assessment Review
+                </h3>
+
+                <p class="project-status-main-progress-info__reviewer">
+                  Reviewer :
+                  <span> ITC Admin </span>
+                </p>
+
+                <p class="project-status-main-progress-info__date">
+                  Completed On :
+                  <span> 17 Nov 2021 11:23am</span>
+                </p>
+              </div>
+
+              <div>
+                <span class="project-status-main-progress-info__logo">
+                  <i class="bx bx-check"></i>
+                </span>
+
+                <h3 class="project-status-main-progress-info__review">
+                  Response
+                </h3>
+
+                <p class="project-status-main-progress-info__reviewer">
+                  Performed by :
+                  <span> Safety User</span>
+                </p>
+
+                <p class="project-status-main-progress-info__date">
+                  Completed On :
+                  <span> 13 Nov 2021 1:56pm</span>
+                </p>
+              </div>
+            </div>
+
+            <div></div>
+          </div>
+
+          <div class="project-status-main__items">
+            <div class="project-status-main__card">
+              <h2 class="project-status-main__title">COVID - 19</h2>
+              <p class="project-status-main__progress">80% Progress</p>
+
+              <progress
+                class="project-status-main__progress-status"
+                value="80"
+                max="100"
+              >
+                80%
+              </progress>
+            </div>
+
+            <div class="project-status-main__card">
+              <h2 class="project-status-main__title">Operational Control</h2>
+            </div>
+
+            <div class="project-status-main__card">
+              <h2 class="project-status-main__title">Safety Planning</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bell icon notification  -->
+    <aside class="notification" id="notification">
+      <div class="notification__header">
+        <div class="notification__left">
+          <h2 class="notification__date">16 November, 2021</h2>
+          <h3 class="notification__time">Tue , 7:12 pm</h3>
+        </div>
+        <div class="notification__right">
+          <i class="bx bx-bell notification__bell" id="notificationBell"></i>
+        </div>
+      </div>
+
+      <div class="notification-mailbox dropdown">
+        <button
+          class="notification-mailbox__button dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <h2 class="notification-mailbox__header">
+            My Mailbox
+            <p class="notification-mailbox__sub-header">Recent Mails</p>
+          </h2>
+        </button>
+        <i class="bx bx-search notification-mailbox__search"></i>
+
+        <ul
+          class="notification-mailbox__menu dropdown-menu"
+          aria-labelledby="dropdownMenuButton1"
+        >
+          <li>
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">3 min</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">PP</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">Hi</h2>
+                <p class="notification-mailbox__message">PFA</p>
+              </div>
+              <div class="notification-mailbox__time">12:23pm</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">Interview assigned</h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">10:11am</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">1d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">3d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">3d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">4d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">4d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">5d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">5d</div>
+            </a>
+
+            <a class="notification-mailbox__item" href="#">
+              <div class="notification-mailbox__profile">SK</div>
+              <div class="notification-mailbox__mail">
+                <h2 class="notification-mailbox__title">
+                  Meeting Confirmation
+                </h2>
+                <p class="notification-mailbox__message">
+                  Hello Kinjal , Im available for the meet..
+                </p>
+              </div>
+              <div class="notification-mailbox__time">6d</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </body>
+  <!-- Bootstrap Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Javascript  -->
+  <script src="src/js/dashboard.js" defer></script>
 </html>
