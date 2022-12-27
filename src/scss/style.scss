@@ -9,20 +9,19 @@
 @charset 'utf-8';
 
 //Helpers
-@import "helpers/__helpers-dir";
+@import "utilities/_utilities-dir";
 
 //Vendor
-@import "vendors/__vendor-dir";
+@import "vendors/_vendor-dir";
 
 //Base Styles
-@import "base/__base-dir";
+@import "base/_base-dir";
 
 //Components
-@import "components/__components-dir";
+@import "components/_components-dir";
 
 //Layout
-@import "layout/__layout-dir";
+@import "layout/_layout-dir";
 
 //Pages
-@import "pages/__pages-dir";
-
+@import "pages/_pages-dir";
