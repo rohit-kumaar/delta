@@ -1,0 +1,203 @@
+.dashboard-darkmode {
+  position: relative;
+  width: rem(19.81);
+  height: rem(19);
+  margin-left: rem(11.95);
+  margin-right: rem(6.19);
+  cursor: pointer;
+
+  & > * {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+  }
+
+  .black-area {
+    border-top-left-radius: rem(10);
+    border-bottom-left-radius: rem(10);
+    background: $color-black;
+  }
+
+  .white-area {
+    border-top-right-radius: rem(10);
+    border-bottom-right-radius: rem(10);
+    margin-left: calc(100% - 50%);
+    background: $color-silver;
+  }
+
+  &__text {
+    margin-right: rem(25);
+    font-size: rem(13);
+    opacity: 0.4;
+  }
+}
+
+.darkmode {
+  & > .sidebar {
+    background: $color-black-eerie-700;
+  }
+
+  & > * {
+    background: $color-black-eerie;
+    color: $color-white;
+
+    & .bxs-plus-square {
+      background: $color-black-eerie-700;
+    }
+
+    & .sidebar-logo__name {
+      color: $color-white;
+    }
+
+    & .dashboard-right {
+      & .dropdown {
+        background: $color-black-jet;
+
+        & button {
+          background: $color-black-jet;
+          color: $color-silver-sonic;
+        }
+      }
+
+      & .dashboard-darkmode__text {
+        color: $color-silver;
+      }
+    }
+
+    & h2 {
+      color: $color-white;
+    }
+
+    & .add-assessment__title {
+      color: $color-black;
+    }
+
+    & p {
+      color: $color-silver;
+    }
+
+    & .assessment-main {
+      &-summary {
+        &__header {
+          color: $color-white;
+        }
+        &__sub-header {
+          color: $color-silver;
+        }
+      }
+
+      &__info {
+        background: $color-black-eerie-700;
+      }
+    }
+
+    .project-status-main {
+      &__items:first-child,
+      &__card {
+        box-shadow: 0 rem(4) rem(34) #ffffff0d;
+      }
+
+      &-progress-info {
+        &__reviewer,
+        &__date {
+          span {
+            color: $color-silver;
+          }
+        }
+      }
+    }
+
+    .container-management {
+      &-applicant,
+      &-sub-applicant,
+      &-sub-internal {
+        background-color: $color-black-eerie;
+        a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  div.option div {
+    color: $color-black;
+  }
+
+  & > * ul li {
+    &.profile {
+      background: $color-black-eerie-700;
+
+      .name {
+        color: $color-white;
+      }
+
+      .job {
+        color: $color-silver;
+      }
+
+      & .bx-chevron-up::before {
+        content: "\ea57";
+        background: $color-white;
+        border-radius: 50%;
+      }
+    }
+  }
+  & a {
+    &:hover {
+      & i,
+      span {
+        color: $color-silver !important;
+      }
+    }
+
+    & i,
+    span {
+      color: $color-silver;
+    }
+  }
+
+  & > aside.notification {
+    $notifi: ".notification";
+    $notifi-mail: "#{$notifi}-mailbox";
+
+    &.active {
+      background: $color-black-eerie-700;
+    }
+
+    #{$notifi}__date {
+      color: $color-silver;
+    }
+
+    #{$notifi}__time {
+      color: $color-silver;
+    }
+
+    #{$notifi}__bell::before,
+    #{$notifi-mail}__search::before {
+      color: $color-silver;
+    }
+
+    &.active #{$notifi}__header,
+    #{$notifi-mail}__item {
+      border-bottom: rem(1) solid $color-black-jet;
+    }
+
+    #{$notifi-mail}__button {
+      border-right: rem(1) solid $color-black-jet;
+      background: $color-black-eerie-700;
+      color: $color-silver;
+    }
+
+    #{$notifi-mail}__header {
+      color: $color-cultured;
+    }
+
+    #{$notifi-mail}__menu {
+      background: $color-black-eerie-700;
+    }
+
+    #{$notifi-mail}__time {
+      color: $color-platinum;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/*
+The login page.
+*/
+.login {
+  display: grid;
+  color: $color-white;
+
+  & > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100vh;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8.0625rem;
+
+    @include breakpoint(mobile-max) {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+
+  &__title {
+    font-size: var(--font-49);
+    font-weight: 800;
+
+    @include breakpoint(mobile-max) {
+      font-size: 3.0625rem;
+    }
+
+    .circle {
+      position: relative;
+      right: 0.625rem;
+      width: 0.4375rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 3.125rem;
+      background: $color-green-apple;
+    }
+  }
+
+  &-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25.3125rem;
+    padding: var(--p-47) 0;
+    border: 0.0625rem solid #ffffff59;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.25rem 7.125rem #ffffff40;
+    background: $color-black-rich-fogra;
+    opacity: 0.6;
+
+    @include breakpoint(portrait-mobile-max) {
+      width: 18.5625rem;
+    }
+
+    &__title {
+      font-size: var(--font-22);
+
+      @include breakpoint(mobile-max) {
+        font-size: 1.375rem;
+      }
+    }
+  }
+}
