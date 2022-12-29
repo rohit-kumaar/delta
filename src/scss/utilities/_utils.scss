@@ -16,10 +16,12 @@
 $colors: (
   "black": $black,
   "white": $white,
+  "lightgreen": $lightgreen,
+  "black-100": $black-100,
   // "header": $header,
   // "btn": $btn,
   // "aside": $aside,
-  // "slate": $slate,,
+  // "slate": $slate,,,,,,
 );
 
 @each $color, $value in $colors {

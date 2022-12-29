@@ -22,14 +22,19 @@ $fs-16: 16px;
 /* Color               */
 /* ------------------- */
 $black: hsl(0, 0%, 0%);
+$black-100: hsl(0, 10%, 4%);
 $White: hsl(0, 0%, 100%);
+$lightgreen: hsl(81, 100%, 50%);
+$lightgreen-400: hsl(81, 68%, 44%);
+$box-shadow: 0 rem(4) rem(114) hsla(0, 0%, 100%, 0.251);
+$btn-box-shadow: 0 rem(4) rem(24) hsla(90, 2%, 77%, 0.251);
 
 // Color
 $color-black: #000;
 $color-black-jet: #3b3b3b;
 $color-black-eerie: #262626;
 $color-black-eerie-700: #1c1a1a;
-$color-black-rich-fogra: #0b0909;
+$color-black-rich-fogra: hsl(0, 10%, 4%);
 $color-white: #ffffff;
 $color-white-cultured: #f5f5f5;
 $color-white-cultured-200: #fafafa;
@@ -38,9 +43,9 @@ $color-grey-davys-100: #4e4e4e;
 $color-grey-spanish: #8e8e8e;
 $color-grey-web: #838181;
 $color-grey-light: #dcd5d5;
-$color-green-apple: #a6ff00;
-$color-green-apple-700: #86bc24;
-$color-green-rgb: #6aa500;
+$color-green-apple: hsl(81, 100%, 50%);
+$color-green-apple-700: hsl(81, 68%, 44%);
+$color-green-rgb: hsl(81, 100%, 32%);
 $color-silver: #c4c4c4;
 $color-silver-sonic: #727272;
 $color-platinum: #e9e7e7;
