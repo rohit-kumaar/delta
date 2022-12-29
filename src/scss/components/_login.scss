@@ -1,0 +1,134 @@
+.login {
+  @include backgroundImage("login-bg-img", "png");
+  @extend %gridCenter;
+  height: 100vh;
+  // display: grid;
+  // color: $color-white;
+
+  // & > * {
+  //   grid-column: 1 / 2;
+  //   grid-row: 1 / 2;
+  // }
+
+  // &__img {
+  //   width: 100%;
+  //   height: 100vh;
+  // }
+
+  // &-content {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   align-items: center;
+  //   justify-content: center;
+  //   gap: 8.0625rem;
+
+  //   @include breakpoint(mobile-max) {
+  //     flex-direction: column;
+  //     gap: 2.5rem;
+  //   }
+  // }
+
+  &__title {
+    font-size: var(--font-49);
+    font-weight: 800;
+
+    @include breakpoint(mobile-max) {
+      font-size: 3.0625rem;
+    }
+
+    .circle {
+      position: relative;
+      right: 0.625rem;
+      width: 0.4375rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 3.125rem;
+      background: $color-green-apple;
+    }
+  }
+
+  &-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // width: 25.3125rem;
+    padding: var(--p-47) 0;
+    border: 0.0625rem solid #ffffff59;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.25rem 7.125rem #ffffff40;
+    background: $color-black-rich-fogra;
+    opacity: 0.6;
+
+    // @include breakpoint(portrait-mobile-max) {
+    //   width: 18.5625rem;
+    // }
+
+    &__title {
+      font-size: var(--font-22);
+
+      @include breakpoint(mobile-max) {
+        font-size: 1.375rem;
+      }
+    }
+  }
+}
+
+.login-form {
+  position: relative;
+  margin-top: 1.875rem;
+  &__info {
+    display: block;
+    width: 19.875rem;
+    height: 3.5625rem;
+    padding-left: 17px;
+    border: 0.0625rem solid $color-grey-davys;
+    border-radius: 0.625rem;
+    background: $color-black;
+    opacity: 0.5;
+    @include breakpoint(portrait-mobile-max) {
+      width: 17.1875rem;
+    }
+
+    &::placeholder {
+      position: absolute;
+      top: 0.5625rem;
+      left: 1.1875rem;
+      color: $color-white;
+      font-size: 0.875rem;
+    }
+
+    &:first-child {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .question-mark {
+    position: absolute;
+    right: 1.5625rem;
+    bottom: 4.5625rem;
+    opacity: 0.5;
+  }
+
+  &-submit {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    margin-top: 1.625rem;
+  }
+
+  &__checkbox {
+    width: 1.375rem;
+    height: 1.4375rem;
+    border: 0.0625rem solid $color-grey-davys;
+    border-radius: 0.1875rem;
+    opacity: 0.1;
+  }
+
+  [type="checkbox"]:checked {
+    opacity: 1;
+  }
+
+  &__reminder {
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+}
