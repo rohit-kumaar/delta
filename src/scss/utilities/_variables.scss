@@ -96,3 +96,12 @@ $images-path: "../images" !default;
 /* Convert px to rem   */
 /* ------------------- */
 $base-rem: 16 !default;
+
+/* ------------------- */
+/* Icomoon             */
+/* ------------------- */
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "../icons/icomoon" !default;
+
+$icon-eye: "\e9ce";
+$icon-eye-blocked: "\e9d1";
