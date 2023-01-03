@@ -46,44 +46,44 @@
   <body>
     <!-- Login Start  -->
     <div class="login | bg-black text-white">
-      <!-- <img
-        src="src/images/login-bg-img.png"
-        alt="Beautiful green leaf"
-        class="login__img"
-      /> -->
-
       <div class="container">
-        <div class="row gap-5 gap-md-0">
+        <div class="row gap-5 gap-lg-0">
           <div
             class="col-lg-6 d-flex align-items-center justify-content-center"
           >
-            <h1 class="login__title | fw-800">Delta</h1>
+            <h1 class="login__title">Delta</h1>
           </div>
 
-          <div class="col col-lg-6">
-            <div class="form-container | bg-black-100">
+          <div class="col-12 col-lg-6">
+            <div class="form__container | bg-black-100">
               <h2 class="form-title">Login into the account</h2>
 
-              <form class="login-form">
-                <input
-                  type="text"
-                  class="login-form__info"
-                  id="text"
-                  placeholder="Username"
-                />
-                <input
-                  id="password"
-                  type="password"
-                  class="login-form__info"
-                  placeholder="Password"
-                />
-                <span class="question-mark">
-                  <i class="bx bx-question-mark"></i>
-                </span>
-                <div class="login-form-submit">
-                  <input type="checkbox" class="login-form__checkbox" />
-                  <label class="login-form__reminder">Remember Me</label>
-                  <a href="dashboard.html" class="login-form__btn">LOGIN</a>
+              <form class="form__login">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Username"
+                  />
+                  <label for="username">Username</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password"
+                  />
+                  <label for="password">Password</label>
+                </div>
+
+                <div class="form__submit">
+                  <div class="form__checkbox">
+                    <input type="checkbox" />
+                    <label>Remember Me</label>
+                  </div>
 
                   <button class="btn btn-success">LOGIN</button>
                 </div>
