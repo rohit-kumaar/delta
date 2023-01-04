@@ -19,7 +19,6 @@
 //     textarea.style.fontWeight = 400;
 //   }
 // }
-
 function loadScript(url) {
   const head = document.getElementsByTagName("head")[0];
   const script = document.createElement("script");
