@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Rohit Kumar" />
+  <meta name="description" content="Your Project Description" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon Start  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="src/icons/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="src/icons/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="src/icons/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="src/icons/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="src/icons/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- Favicon End  -->
+  <title>Delta | Login</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <script src="src/js/index.js" type="module" defer></script>
+</head>
+
+<body>
+  <!-- Login Start  -->
+  <div class="login | bg-black text-white">
+    <div class="container">
+      <div class="row gap-5 gap-lg-0">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <h1 class="login__title">Delta</h1>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="form__container">
+            <h2 class="form-title">Login into the account</h2>
+
+            <form class="form__login">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control text-uppercase" id="userName" placeholder="Username" required />
+                <label for="userName">Username</label>
+              </div>
+
+              <div class="form-floating mb-4 position-relative">
+                <input type="password" class="form-control pe-5" id="password" placeholder="Password" required />
+                <label for="password">Password</label>
+                <span class="icon-eye icon-eye-blocked text-white position-absolute"></span>
+              </div>
+
+              <div class="form__submit">
+                <div class="form__checkbox">
+                  <input type="checkbox" />
+                  <label>Remember Me</label>
+                </div>
+
+                <input type="submit" class="btn btn-success" id="handleLogin"  value="LOGIN">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Login End  -->
+</body>
+
+<!-- Bootstrap JS Start -->
+<script src="src/js/bootstrap/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS End -->
+
+<!-- Custom JS Start -->
+<!-- <script src="src/js/login/password-show-hide.js"></script> -->
+<!-- Custom JS End -->
+
+</html>
