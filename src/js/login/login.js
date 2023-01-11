@@ -2,22 +2,16 @@ import { qs } from "../querySelector.js";
 
 const userName = qs("#userName");
 const password = qs("#password");
+const checkbox = qs("#checkbox");
 
 const handleLogin = qs("#handleLogin");
 handleLogin.disabled = true;
 
-userName.addEventListener("change", (e) => {
-  if (password.value === "") {
-    handleLogin.disabled = true;
-  } else {
+checkbox.addEventListener("change", function (e) {
+  if (checkbox.checked && userName.value !== "" && password.value !== "") {
     handleLogin.disabled = false;
-  }
-});
-password.addEventListener("change", (e) => {
-  if (password.value === "") {
-    handleLogin.disabled = true;
   } else {
-    handleLogin.disabled = false;
+    handleLogin.disabled = true;
   }
 });
 
