@@ -2,22 +2,28 @@
   @include backgroundImage("login-bg-img", "png");
   @extend %gridCenter;
   height: 100vh;
+  background-color: $black;
+  color: $white;
   overflow-y: auto;
 
   &__title {
-    position: relative;
-    font-size: rem(49);
-    font-weight: 800;
+    @extend %flexCenter;
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: rem(-10);
-      bottom: rem(9);
-      width: rem(7);
-      aspect-ratio: 1 / 1;
-      border-radius: rem(50);
-      background: $lightgreen;
+    > h1 {
+      position: relative;
+      font-size: rem(49);
+      font-weight: 800;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        bottom: 9px;
+        width: 7px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50px;
+        background: $lightgreen;
+      }
     }
   }
 
@@ -25,77 +31,77 @@
     &__container {
       @extend %flexCenter;
       flex-direction: column;
-      gap: rem(30);
+      gap: 30px;
       padding: 13.16%;
-      border: rem(1) solid rgba($white, 0.349);
-      border-radius: rem(16);
+      border: 1px solid rgba($white, 0.349);
+      border-radius: 16px;
       background-color: $black-100;
       box-shadow: $box-shadow;
-    }
 
-    &-title {
-      font-size: rem(20);
+      > h2 {
+        font-size: rem(20);
 
-      @include mobile {
-        font-size: rem(22);
+        @include mobile {
+          font-size: rem(22);
+        }
       }
-    }
 
-    &__login {
-      width: 100%;
+      > form {
+        width: 100%;
 
-      .form-floating {
-        .form-control {
-          height: rem(57);
-          border: rem(1) solid $grey-300;
-          background-color: $black;
-          color: $white;
+        .form-floating {
+          .form-control {
+            height: 57px;
+            border: 1px solid $grey-300;
+            background-color: $black;
+            color: $white;
 
-          &:focus {
-            box-shadow: none;
+            &:focus {
+              box-shadow: none;
+            }
+          }
+
+          label {
+            font-size: rem(14);
+          }
+
+          [class*="icon-"] {
+            right: 16px;
+            top: 40%;
+            cursor: pointer;
           }
         }
 
-        label {
-          font-size: rem(14);
-        }
+        .form__submit {
+          @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
 
-        [class*="icon-"] {
-          right: 16px;
-          top: 40%;
-          cursor: pointer;
-        }
-      }
-    }
+          > div {
+            @extend %alignCenter;
+            justify-content: start;
+            gap: 10px;
+            margin-bottom: 16px;
 
-    &__submit {
-      @include tablet {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
+            @include tablet {
+              margin-bottom: 0;
+            }
 
-    &__checkbox {
-      @extend %alignCenter;
-      justify-content: start;
-      gap: rem(10);
-      margin-bottom: rem(16);
+            > input {
+              width: 22px;
+              height: 22px;
+              border: 1px solid $grey-300;
+              border-radius: 3px;
+              opacity: 0.1;
+              accent-color: $lightgreen;
 
-      @include tablet {
-        margin-bottom: 0;
-      }
-
-      input {
-        width: rem(22);
-        height: rem(22);
-        border: rem(1) solid $grey-300;
-        border-radius: rem(3);
-        opacity: 0.1;
-        accent-color: $lightgreen;
-
-        &:checked {
-          opacity: 1;
+              &:checked {
+                opacity: 1;
+              }
+            }
+          }
         }
       }
     }
