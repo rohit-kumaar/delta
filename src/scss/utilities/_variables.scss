@@ -21,25 +21,22 @@ $fs-16: 16px;
 /* ------------------- */
 /* Color               */
 /* ------------------- */
+$primary: hsl(81, 68%, 44%);
 $black: hsl(0, 0%, 0%);
 $black-100: hsl(0, 10%, 4%);
 $White: hsl(0, 0%, 100%);
 $lightgreen: hsl(81, 100%, 50%);
 $slate: hsl(0, 0%, 96%);
-$lightgreen-400: hsl(81, 68%, 44%);
 $grey-300: hsl(0, 0%, 30%);
-$primary: hsl(81, 68%, 44%);
-$box-shadow: 0 rem(4) rem(114) hsla(0, 0%, 100%, 0.251);
-$btn-box-shadow: 0 rem(4) rem(24) hsla(90, 2%, 77%, 0.251);
+$box-shadow: 0 4px 114px hsla(0, 0%, 100%, 0.251);
+$btn-box-shadow: 0 4px 24px hsla(90, 2%, 77%, 0.251);
 
 // Color
-$color-black: #000;
 $color-black-jet: #3b3b3b;
 $color-black-eerie: #262626;
 $color-black-eerie-700: #1c1a1a;
 $color-black-rich-fogra: hsl(0, 10%, 4%);
-$color-white: #ffffff;
-
+$white: #ffffff;
 $slate-200: #fafafa;
 $color-grey-davys: hsl(0, 0%, 30%);
 $color-grey-davys-100: #4e4e4e;
