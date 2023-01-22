@@ -1,367 +1,3 @@
-.sidebar {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: rem(221);
-  height: 100vh;
-  padding: rem(33) rem(9) 0 rem(23);
-  background: $color-white-cultured;
-  transition: width 0.5s ease, background 0.5s ease;
-
-  //  For small size start
-  &.close {
-    width: rem(67);
-    background: $color-green-apple-700 !important;
-
-    &
-      ~ main
-      .dashboard
-      .dashboard-main
-      .dashboard-items
-      .dashboard-card:first-child {
-      display: table;
-      flex-grow: 0;
-      width: rem(196);
-
-      @include breakpoint(ipad-max) {
-        flex-grow: 1;
-        padding-bottom: rem(17);
-      }
-
-      & .dashboard-card__message {
-        margin-left: auto;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: rem(91);
-        left: rem(96);
-        height: rem(178);
-        transition: all 0.3s ease;
-        transform: rotate(-90deg);
-
-        @include breakpoint(ipad-max) {
-          display: none;
-        }
-      }
-    }
-
-    & ~ main section {
-      left: rem(115);
-      width: calc(100% - 160px);
-      transition: all 0.5s ease;
-
-      &.active {
-        width: calc(100% - 425px);
-      }
-    }
-
-    & li:hover .tooltip {
-      display: block;
-    }
-
-    & li a {
-      &:hover {
-        & .sidebar-list__name,
-        & i {
-          color: $color-white;
-        }
-      }
-    }
-
-    & .sidebar-logo {
-      & .sidebar-logo__name {
-        opacity: 0;
-
-        & .circle {
-          display: none;
-        }
-      }
-    }
-
-    & .sidebar-logo {
-      & img {
-        display: block;
-      }
-
-      & #btn {
-        background: $color-black;
-        text-align: right;
-      }
-    }
-
-    & .sidebar-logo & li .tooltip {
-      display: block;
-    }
-
-    & li a .sidebar-list__name {
-      pointer-events: auto;
-      opacity: 0;
-    }
-
-    & li.profile {
-      width: 67px;
-      background: $color-green-apple-700;
-
-      &::before {
-        content: "";
-        width: 60%;
-        border-top: rem(2) solid $color-grey-web;
-      }
-
-      & #logout {
-        display: none;
-        width: 100%;
-        background: $color-purple-dark;
-      }
-
-      & .profile-details .name_job {
-        & .name,
-        & .job {
-          color: $color-white;
-          opacity: 0;
-        }
-      }
-    }
-  }
-  //  For small size end
-
-  &-logo {
-    position: relative;
-    display: flex;
-
-    img {
-      display: none;
-      margin-left: rem(-6);
-      transition: all 0.1s ease;
-    }
-
-    &__name {
-      display: flex;
-      font-size: rem(29.94);
-      font-weight: 900;
-      color: $color-black;
-      opacity: 1;
-      transition: all 0.01ms ease;
-
-      .circle {
-        position: relative;
-        display: inline-block;
-        top: rem(22);
-        right: 0;
-        width: 0.4375rem;
-        height: 0.4375rem;
-        border-radius: 3.125rem;
-        background: $color-green-apple-700;
-      }
-    }
-
-    #btn {
-      position: absolute;
-      display: grid;
-      place-items: center;
-      top: rem(65);
-      right: rem(-20);
-      width: rem(30);
-      padding-top: rem(2);
-      aspect-ratio: 1 / 1;
-      background: $color-green-apple-700;
-      color: $color-white;
-      border-radius: rem(50);
-      font-size: rem(23);
-      text-align: center;
-      transform: translateY(-50%);
-      transition: all 0.5s ease;
-    }
-  }
-
-  & i {
-    color: $color-black;
-    font-size: rem(28);
-    text-align: center;
-  }
-
-  ul.sidebar-list {
-    padding-left: 0;
-  }
-
-  &-list {
-    margin-top: rem(61.63);
-    height: 100%;
-
-    &__name {
-      margin-left: rem(11);
-      font-size: rem(12);
-      color: $color-black;
-      white-space: nowrap;
-      pointer-events: none;
-      transition: 0.4s;
-      opacity: 1;
-    }
-  }
-
-  & li {
-    position: relative;
-    list-style: none;
-
-    &:not(:last-child) {
-      margin-bottom: rem(13);
-    }
-
-    &:nth-child(2) {
-      margin-bottom: rem(16);
-    }
-
-    &:hover .tooltip {
-      display: none;
-      top: 50%;
-      pointer-events: auto;
-      transition: all 0.4s ease;
-      transform: translateY(-50%);
-      opacity: 1;
-    }
-
-    & .tooltip {
-      display: none;
-      position: absolute;
-      z-index: 3;
-      top: rem(-20);
-      left: calc(100% + 15px);
-      padding: rem(6) rem(12);
-      border-radius: rem(4);
-      background: $color-white;
-      box-shadow: 0 rem(5) rem(10) #0000004d;
-      font-size: rem(15);
-      opacity: 0;
-      white-space: nowrap;
-      pointer-events: none;
-      transition: 0s;
-    }
-  }
-
-  & li a {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-radius: rem(12);
-    text-decoration: none;
-    transition: all 0.4s ease;
-
-    &:hover {
-      & .sidebar-list__name,
-      & i {
-        color: $color-black;
-        font-weight: 700;
-        transition: all 0.5s ease;
-      }
-    }
-  }
-
-  & li i {
-    border-radius: rem(12);
-    font-size: rem(14);
-  }
-
-  .settings {
-    position: absolute;
-    z-index: 20;
-    bottom: rem(55);
-    display: none;
-    width: rem(178);
-    height: rem(100);
-    border-radius: rem(10);
-    margin-bottom: 0 !important;
-    background: $color-white;
-
-    a {
-      width: auto;
-      margin-top: rem(12);
-      margin-left: rem(18);
-      font-size: rem(11);
-      font-weight: 600;
-    }
-
-    #triangle-down {
-      position: absolute;
-      right: rem(-10);
-      width: 0;
-      height: 0;
-      border-top: rem(33) solid $color-white;
-      border-right: rem(24) solid transparent;
-      border-left: rem(5) solid transparent;
-      transform: rotate(332deg);
-    }
-  }
-
-  .active {
-    display: block;
-  }
-
-  & li.profile {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: rem(221);
-    height: rem(60);
-    padding: rem(10) rem(14);
-    background: $color-white-cultured;
-    transition: all 0.5s ease;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 87%;
-      border-top: rem(2) solid $color-grey-light;
-      opacity: 0.6;
-    }
-
-    & .name,
-    & .job {
-      font-size: rem(13);
-      font-weight: 600;
-      color: $color-black;
-      white-space: nowrap;
-      opacity: 1;
-    }
-
-    & .job {
-      font-size: rem(12);
-    }
-
-    & #logout {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      display: block;
-      width: rem(50);
-      height: rem(60);
-      border-radius: 0;
-      background: none;
-      line-height: rem(60);
-      transform: translateY(-50%);
-      transition: all 0.5s ease;
-    }
-  }
-
-  & li .profile-details {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
-  & li img {
-    width: rem(34);
-    height: rem(33);
-    border-radius: rem(6);
-    margin-right: rem(11);
-    object-fit: cover;
-  }
-}
-
 //DASHBBOARD
 main section {
   position: relative;
@@ -446,7 +82,7 @@ main section {
   .dropdown {
     padding: 0 rem(13.23) 0 rem(13.66);
     border-radius: rem(8);
-    background: $color-white-cultured;
+    background: $slate;
 
     &-toggle {
       display: flex;
@@ -531,7 +167,7 @@ main section {
         top: rem(17);
         left: 0;
         height: 73%;
-        border-left: rem(3) solid $color-green-apple-700;
+        border-left: rem(3) solid $primary;
         border-top-left-radius: rem(10);
         border-bottom-left-radius: rem(10);
         transition: all 0.3s ease;
@@ -578,7 +214,7 @@ main section {
 
   .bxs-plus-square {
     margin-top: rem(35);
-    background: $color-white-cultured;
+    background: $slate;
     color: $color-silver;
     font-size: rem(78);
   }
@@ -624,8 +260,8 @@ main section {
         right: rem(12);
         width: rem(100);
         height: rem(25);
-        border-right: rem(2) solid $color-green-apple-700;
-        border-bottom: rem(2) solid $color-green-apple-700;
+        border-right: rem(2) solid $primary;
+        border-bottom: rem(2) solid $primary;
         border-bottom-right-radius: rem(10);
 
         span {
@@ -634,8 +270,8 @@ main section {
           right: rem(6);
           width: rem(230);
           height: rem(40);
-          border-top: rem(2) solid $color-green-apple-700;
-          border-left: rem(2) solid $color-green-apple-700;
+          border-top: rem(2) solid $primary;
+          border-left: rem(2) solid $primary;
           border-top-left-radius: rem(40);
         }
       }
@@ -646,7 +282,7 @@ main section {
         top: 0;
         width: rem(2);
         height: rem(50);
-        background-color: $color-green-apple-700;
+        background-color: $primary;
 
         &--height {
           height: rem(30);
@@ -662,8 +298,8 @@ main section {
 
         &__left {
           right: 0;
-          border-right: rem(2) solid $color-green-apple-700;
-          border-bottom: rem(2) solid $color-green-apple-700;
+          border-right: rem(2) solid $primary;
+          border-bottom: rem(2) solid $primary;
           border-bottom-right-radius: rem(30);
 
           span {
@@ -672,15 +308,15 @@ main section {
             left: rem(-26);
             width: rem(50);
             height: rem(73);
-            border-top: rem(2) solid $color-green-apple-700;
-            border-left: rem(2) solid $color-green-apple-700;
+            border-top: rem(2) solid $primary;
+            border-left: rem(2) solid $primary;
             border-top-left-radius: rem(30);
           }
         }
 
         &__right {
-          border-left: rem(2) solid $color-green-apple-700;
-          border-bottom: rem(2) solid $color-green-apple-700;
+          border-left: rem(2) solid $primary;
+          border-bottom: rem(2) solid $primary;
           border-bottom-left-radius: rem(30);
 
           span {
@@ -689,8 +325,8 @@ main section {
             right: rem(-26);
             width: rem(50);
             height: rem(73);
-            border-top: rem(2) solid $color-green-apple-700;
-            border-right: rem(2) solid $color-green-apple-700;
+            border-top: rem(2) solid $primary;
+            border-right: rem(2) solid $primary;
             border-top-right-radius: rem(30);
           }
         }
@@ -703,8 +339,8 @@ main section {
         left: rem(12);
         width: rem(100);
         height: rem(25);
-        border-bottom: rem(2) solid $color-green-apple-700;
-        border-left: rem(2) solid $color-green-apple-700;
+        border-bottom: rem(2) solid $primary;
+        border-left: rem(2) solid $primary;
         border-bottom-left-radius: rem(10);
 
         span {
@@ -713,8 +349,8 @@ main section {
           left: rem(6);
           width: rem(230);
           height: rem(40);
-          border-top: rem(2) solid $color-green-apple-700;
-          border-right: rem(2) solid $color-green-apple-700;
+          border-top: rem(2) solid $primary;
+          border-right: rem(2) solid $primary;
           border-top-right-radius: rem(40);
         }
       }
@@ -867,7 +503,7 @@ main section {
       font-weight: 700;
 
       &::marker {
-        color: $color-green-apple-700;
+        color: $primary;
       }
 
       &__header {
@@ -915,7 +551,7 @@ main section {
 
       .form-check-input:checked {
         border-color: $color-white;
-        background-color: $color-green-apple-700;
+        background-color: $primary;
       }
 
       .form-check-input:focus {
@@ -928,7 +564,7 @@ main section {
         width: rem(46);
         height: rem(14);
         border-radius: rem(20);
-        background: $color-green-apple-700;
+        background: $primary;
         color: $color-white;
         font-size: rem(8);
         font-weight: 600;
@@ -944,7 +580,7 @@ main section {
   width: rem(406);
   height: 100vh;
   padding: rem(35) rem(23) rem(23) rem(24);
-  background: $color-white-cultured-200;
+  background: $slate-200;
   box-shadow: 0 rem(4) rem(44) #c2c2c240;
 
   &__header {
@@ -980,7 +616,7 @@ main section {
       border: none;
       border-radius: rem(8);
       margin-top: rem(3);
-      background: $color-white-cultured;
+      background: $slate;
       font-size: rem(10);
 
       &::placeholder {
@@ -1030,7 +666,7 @@ main section {
         border: none;
         border-radius: rem(8);
         margin-top: rem(3);
-        background: $color-white-cultured;
+        background: $slate;
         font-size: rem(10);
         cursor: pointer;
       }
@@ -1231,7 +867,7 @@ main section {
         width: rem(27);
         height: rem(27);
         border-radius: rem(30);
-        background: $color-green-apple-700;
+        background: $primary;
 
         .bx-check {
           &::before {
@@ -1315,7 +951,7 @@ main section {
   &__bell {
     position: absolute;
     right: rem(22);
-    color: $color-green-apple-700;
+    color: $primary;
     font-size: rem(24);
   }
 

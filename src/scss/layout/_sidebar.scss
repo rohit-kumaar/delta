@@ -1,0 +1,361 @@
+$Sidebar: ".sidebar";
+
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 221px;
+  height: 100vh;
+  padding: 33px 9px 0 23px;
+  background: $slate;
+  transition: width 0.5s ease, background 0.5s ease;
+
+  //  For small size start
+  &.close {
+    width: rem(67);
+    background: $primary !important;
+
+    &
+      ~ main
+      .dashboard
+      .dashboard-main
+      .dashboard-items
+      .dashboard-card:first-child {
+      display: table;
+      flex-grow: 0;
+      width: rem(196);
+
+      @include breakpoint(ipad-max) {
+        flex-grow: 1;
+        padding-bottom: rem(17);
+      }
+
+      & .dashboard-card__message {
+        margin-left: auto;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: rem(91);
+        left: rem(96);
+        height: rem(178);
+        transition: all 0.3s ease;
+        transform: rotate(-90deg);
+
+        @include breakpoint(ipad-max) {
+          display: none;
+        }
+      }
+    }
+
+    & ~ main section {
+      left: rem(115);
+      width: calc(100% - 160px);
+      transition: all 0.5s ease;
+
+      &.active {
+        width: calc(100% - 425px);
+      }
+    }
+
+    & li:hover .sidebar-list__tooltip {
+      display: block;
+    }
+
+    & li a {
+      &:hover {
+        & .sidebar-list__link,
+        & i {
+          color: $color-white;
+        }
+      }
+    }
+
+    & .sidebar-logo {
+      & .sidebar-logo__name {
+        opacity: 0;
+
+        & .circle {
+          display: none;
+        }
+      }
+    }
+
+    & .sidebar-logo {
+      & img {
+        display: block;
+      }
+
+      & #btn {
+        background: $color-black;
+        text-align: right;
+      }
+    }
+
+    & .sidebar-logo & li .sidebar-list__tooltip {
+      display: block;
+    }
+
+    & li a .sidebar-list__link {
+      pointer-events: auto;
+      opacity: 0;
+    }
+
+    & li.profile {
+      width: 67px;
+      background: $primary;
+
+      &::before {
+        content: "";
+        width: 60%;
+        border-top: rem(2) solid $color-grey-web;
+      }
+
+      & #logout {
+        display: none;
+        width: 100%;
+        background: $color-purple-dark;
+      }
+
+      & .profile-details .name_job {
+        & .name,
+        & .job {
+          color: $color-white;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  //  For small size end
+
+  &-logo {
+    position: relative;
+    display: flex;
+
+    > img {
+      display: none;
+      margin-left: -6px;
+      transition: all 0.1s ease;
+    }
+
+    &__name {
+      position: relative;
+      font-size: rem(29.94);
+      font-weight: 900;
+      color: $black;
+      opacity: 1;
+      transition: all 0.1s ease;
+    }
+
+    > .brand__style {
+      &::after {
+        bottom: 6px;
+      }
+    }
+
+    #{$Sidebar}__btn {
+      @extend %gridCenter;
+      position: absolute;
+      top: 65px;
+      right: -20px;
+      width: 30px;
+      padding-top: 2px;
+      aspect-ratio: 1 / 1;
+      background: $primary;
+      color: $white;
+      border-radius: 50px;
+      font-size: rem(23);
+      text-align: center;
+      transform: translateY(-50%);
+      transition: all 0.5s ease;
+    }
+  }
+
+  & i {
+    color: $color-black;
+    font-size: rem(28);
+    text-align: center;
+  }
+
+  ul.sidebar-list {
+    padding-left: 0;
+  }
+
+  &-list {
+    margin-top: rem(61.63);
+    height: 100%;
+
+    &__link {
+      margin-left: rem(11);
+      font-size: rem(12);
+      color: $color-black;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: 0.4s;
+      opacity: 1;
+    }
+
+    > .settings {
+      display: none;
+      position: relative;
+      z-index: 20;
+      bottom: 55px;
+      width: 178px;
+      height: 100px;
+      margin-bottom: 0 !important;
+      background: $color-white;
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+      > a {
+        font-size: rem(11);
+        font-weight: 600;
+        height: 100%;
+        padding-inline: 10px;
+
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+
+      #triangle-down {
+        position: absolute;
+        bottom: -19px;
+        right: -10px;
+        border-top: 33px solid $white;
+        border-right: 24px solid transparent;
+        transform: rotate(332deg);
+      }
+    }
+  }
+
+  & li {
+    position: relative;
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: rem(13);
+    }
+
+    &:nth-child(2) {
+      margin-bottom: rem(16);
+    }
+
+    &:hover .sidebar-list__tooltip {
+      display: none;
+      top: 50%;
+      pointer-events: auto;
+      transition: all 0.4s ease;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+
+    & .sidebar-list__tooltip {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      top: rem(-20);
+      left: calc(100% + 15px);
+      padding: rem(6) rem(12);
+      border-radius: rem(4);
+      background: $color-white;
+      box-shadow: 0 rem(5) rem(10) #0000004d;
+      font-size: rem(15);
+      opacity: 0;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: 0s;
+    }
+  }
+
+  & li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    // border-radius: rem(12);
+    text-decoration: none;
+    transition: all 0.4s ease;
+
+    &:hover {
+      & .sidebar-list__link,
+      & i {
+        color: $color-black;
+        font-weight: 700;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  & li i {
+    border-radius: rem(12);
+    font-size: rem(14);
+  }
+
+  & li.profile {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: rem(221);
+    height: rem(60);
+    padding: rem(10) rem(14);
+    background: $slate;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 87%;
+      border-top: rem(2) solid $color-grey-light;
+      opacity: 0.6;
+    }
+
+    & .name,
+    & .job {
+      font-size: rem(13);
+      font-weight: 600;
+      color: $color-black;
+      white-space: nowrap;
+      opacity: 1;
+    }
+
+    & .job {
+      font-size: rem(12);
+    }
+
+    & #logout {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: block;
+      width: rem(50);
+      height: rem(60);
+      border-radius: 0;
+      background: none;
+      line-height: rem(60);
+      transform: translateY(-50%);
+      transition: all 0.5s ease;
+    }
+  }
+
+  & li .profile-details {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  & li img {
+    width: rem(34);
+    height: rem(33);
+    border-radius: rem(6);
+    margin-right: rem(11);
+    object-fit: cover;
+  }
+}

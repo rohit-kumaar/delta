@@ -24,8 +24,14 @@
   }
 }
 
-@mixin laptop {
+@mixin largeTablet {
   @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @include media-breakpoint-up(xl) {
     @content;
   }
 }

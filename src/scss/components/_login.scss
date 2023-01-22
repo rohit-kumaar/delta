@@ -13,17 +13,6 @@
       position: relative;
       font-size: rem(49);
       font-weight: 800;
-
-      &::after {
-        content: "";
-        position: absolute;
-        right: -10px;
-        bottom: 9px;
-        width: 7px;
-        aspect-ratio: 1 / 1;
-        border-radius: 50px;
-        background: $lightgreen;
-      }
     }
   }
 

@@ -9,3 +9,16 @@
   border: 0.1rem solid blue; // DELETE
 }
 // =============== DELETE ================
+
+.brand__style {
+  &::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 9px;
+    width: 7px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50px;
+    background: $lightgreen;
+  }
+}
